@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestEncode(t *testing.T) {
+func TestRomanEncode(t *testing.T) {
 	ro := Roman{}
 	if v, err := ro.Encode(1234); v != "MCCXXXIV" && err != nil {
 		t.Error("Error to encode 1234")
@@ -18,7 +18,7 @@ func TestEncode(t *testing.T) {
 	}
 }
 
-func TestDecode(t *testing.T) {
+func TestRomanDecode(t *testing.T) {
 	ro := Roman{}
 	if v, err := ro.Decode("MMMCDLXVI"); v != 3966 && err != nil {
 		t.Error("Error to decode MMMCDLXVI")
@@ -33,10 +33,10 @@ func TestDecode(t *testing.T) {
 	}
 }
 
-func TestSetDecodable(t *testing.T) {
+func TestRomanSetDecodable(t *testing.T) {
 	ro := Roman{}
 	if ro.Decodable != false {
-		t.Error("Roamn.Decodable is not false by default")
+		t.Error("Roman.Decodable is not false by default")
 	}
 	ro.SetDecodable(true)
 	if ro.Decodable != true {
